@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<a href="/order_create">add</a>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>CUSTOMER NAME</th>
+        <th>ITEM NAME</th>
+        <th>ACTION</th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <td>{{order.id}}</td>
+        <td>{{order.customer.Customer_name}}</td>
+        <td>{{order.item.item_name}}</td>
+        <td><a href="/order_delete/{{order.id}}">cancel</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block content %}
+<a href="/payment_create">add</a>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>CUSTOMER NAME</th>
+        <th>COST</th>
+        <th>VAT</th>
+        <th>PAID</th>
+        <th>DATE</th>
+    </tr>
+    {% for payment in payments %}
+    <tr>
+        <td>{{payment.id}}</td>
+        <td>{{payment.customer.Customer_name}}</td>
+        <td>{{payment.cost}}</td>
+        <td>{{payment.vat}}</td>
+        <td>{{payment.paid}}</td>
+        <td>{{payment.date}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+

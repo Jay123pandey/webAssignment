@@ -1,0 +1,7 @@
+.picture2
+{
+    height:300px;
+	width:100%;
+	background-image:url('images/image2.png');
+	background-size:cover;
+}

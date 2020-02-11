@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<form action="/item_create" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+item_name:{{form.item_name}}
+item_image:{{form.item_image}}
+<button type="submit">add</button>
+</form>
+{% endblock %}

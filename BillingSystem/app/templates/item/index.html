@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block content %}
+<a href="/item_create">add</a>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>ITEM NAME</th>
+        <th>ITEM IMAGE</th>
+        <th>ACTION</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td>{{item.item_id}}</td>
+        <td>{{item.item_name}}</td>
+        {% load static %}
+        <td><img width="100" src="{% static 'images/' %}{{item.item_image}}" /></td>
+        <td><a href="/item_edit/{{item.item_id}}">edit</a> | <a href="/item_delete/{{item.item_id}}">delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

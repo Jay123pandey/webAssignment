@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<form method="POST" action="/item_update/{{item.item_id}}" enctype="multipart/form-data">
+			{% csrf_token %}
+			 item_name: <input type="text" name="item_name" value="{{item.item_name}}"/>
+			 {% load static %}
+			 <img height="100" src="{% static '/images/' %}{{item.item_image}}" />
+			 image:<input type="file" name="item_image" value={{item.item_image}} />
+			<button type="submit">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	  {% load static %}
+    <meta charset="UTF-8"/>
+    <title>Assignment</title>
+	<link type="text/css" rel="stylesheet" href="{% static 'css/style1.css' %}" />
+  </head>
+
+ <body>
+   <div class="main_container">
+
+	<div class="logo_container">
+		<img src="{% static 'images/wood1' %}.jpg" class="logo"/>
+
+
+	</div>
+
+		<div class="navigation_container">
+			<ul>
+				<li> <a href="#">Home</a></li>
+                <li> <a href="#">Items</a>
+
+				  <ul>
+					<li><a href="#">Food</a></li>
+					<li><a href="#">Price</a></li>
+					<li><a href="#">Drinks</a></li>
+
+					</ul>
+
+				</li>
+				<li> <a href="#">About Us</a></li>
+				<li> <a href="#">Photos</a></li>
+				<li> <a href="#">Help</a></li>
+				<li> <a href="#" id="button">LogIn</a></li>
+
+			</ul>
+		</div>
+
+
+
+
+
+<div class="dis_pic">
+
+<div class="login">
+  <div class="login_container">
+    <img src="{% static  'images/avatar.jpg' %}" class="avatar"/>
+	<img src="{% static 'images/close.png' %}" class="close">
+	<h1>Login</h1>
+	<form action="/entry" method="post">
+		{% csrf_token %}
+	<p>Email</p>
+	<input type="text" name="email" placeholder="Enter your email">
+	<p>Password</p>
+	<input type="password" name="password" placeholder="Enter your Password">
+	<input type="submit" name="" value="Log in">
+	<a href="#"> Lost your password?</a><br>
+	<a href="#"> Don't have an account?</a>
+	</form>
+  </div>
+ </div>
+
+</div>
+
+<div class="training_box">
+<div class="training_box_header"><h1>Special Foods</h1></div>
+<div class="photo1"><img src="{% static 'images/img1.jpg' %}" width="100%" height="210"><p>Wood Special</p></div>
+<div class="photo2"><img src="{% static 'images/photo1.jpeg' %}" width="100%" height="210"><p>Roll</p></div>
+<div class="photo3"><img src="{% static 'images/photo2.jpg' %}" width="100%" height="210"><p>DrumStick</p></div>
+<div class="photo4"><img src="{% static 'images/photo3.jpg' %}" width="100%" height="210"><p>Burger</p></div>
+<div class="photo5"><img src="{% static 'images/photo4.jpg' %}" width="100%" height="210"><p>Dumpling</p></div>
+<div class="photo6"><img src="{% static 'images/photo5.jpg' %}" width="100%" height="210"><p>Tacos</p></div>
+<div class="food7"><img src="{% static 'images/photo6.jpg' %}" width="100%" height="210"><p>Indian Food</p></div>
+<div class="food8"><img src="{% static 'images/photo7.jpg' %}" width="100%" height="210"><p>Stick Food</p></div>
+
+</div>
+
+
+<div class="subscribe_container">
+        <div class="subscribe_form">
+            <h1>GET SPECIAL OFFERS AT OUR WOOD HOUSE</h1>
+			<h2>with delecious food</h2>
+			<input type="text" name="" placeholder="Email">
+			<input type="submit" name="" value="Subscribe">
+        </div>
+
+		<div class="social_media">
+		<h1>GET CONNECTED WITH US</h1>
+		<img src="{% static 'images/facebook.png' %}" />
+		<img src="{% static 'images/instagram.png' %}" />
+		<img src="{% static 'images/twitter.png' %}" />
+		</div>
+</div>
+
+
+<div class="footer">
+	<div class="footer1">
+	<h2>Wood House BBQ </h2>
+	<p> Wood House is the fastest, easiest and most convenient way to enjoy the best food of your favourite restaurants at home, at the office or wherever you want to.
+
+We know that your time is valuable and sometimes every minute in the day counts. That’s why we deliver! So you can spend more time doing the things you love.</p>
+    </div>
+
+	<div class="footer2">
+	<h2>Navigation</h2>
+	<li><a href="#">Items</a></li>
+	<li><a href="#">Photos</a></li>
+	<li><a href="#">About us</a></li>
+	<li><a href="#">Help</a></li>
+
+    </div>
+
+	<div class="footer3">
+	<h2>Contact</h2>
+	<p> Kuleshwor, Kathmandu</p>
+	<p>Email:food@woodhousebbq.com</p>
+	<p>Tel:0-2552343</p>
+    </div>
+
+	<div class="footer4">
+	<h2>We are open</h2>
+	<p>Sun-Fri: 7:00am - 10:00pm</p>
+	<p>Sat: 11:00am - 10:00pm</p>
+    </div>
+</div>
+
+<div class="copyright_bar">
+<p>© 2019 All rights reserved by Wood House BBQ.</p>
+</div>
+
+
+
+</div>
+
+
+</body>
+
+<script src="{% static 'JavaScript/script.js' %}">
+
+</script>
+</html>

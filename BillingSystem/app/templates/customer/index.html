@@ -1,0 +1,63 @@
+
+
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="picture2">
+</div>
+<a href="/customer_create">add</a>
+<input  type="text" id="search" placeholder="search by name..." class="form-control col-md-4" />
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>CUSTOMER NAME</th>
+        <th>CUSTOMER ADDRESS</th>
+        <th>ACTION</th>
+    </tr>
+    {% for customer in customers %}
+    <tr>
+        <td>{{customer.Customer_id}}</td>
+        <td>{{customer.Customer_name}}</td>
+         <td>{{customer.Customer_address}}</td>
+        <td><a href="/customer_edit/{{customer.Customer_id}}">edit</a> | <a href="/customer_delete/{{customer.Customer_id}}">delete</a></td>
+
+
+    </tr>
+    {% endfor %}
+</table>
+    <script>
+	$(document).ready(()=>{
+		$(".sidebar").find(".active").removeClass("active");
+		$("#user").addClass("active")
+
+
+		$("#search").keydown(()=>{
+			$.ajax({
+				data:{search:$("#search").val()},
+				url:'/search',
+				method:'GET',
+				success:function(data){
+				console.log(data)
+					$("tr").not("tr:first").remove();
+					let html="";
+					for(customer of data){
+
+						html="<tr>";
+							html+="<td>"+customer.Customer_id+"</td>";
+							html+="<td>"+customer.Customer_name+"</td>";
+							html+="<td>"+customer.Customer_address+"</td>";
+							html+="<td><a href='/customer_edit/"+customer.Customer_id+"'>edit</a> | <a href='/customer_delete/"+customer.Customer_id+"'>delete</a></td>";
+						html+="</tr>";
+						$("table").append(html);
+						}
+
+				},error:function(error){
+				console.log(error)
+				},complete:function(){
+				console.log("complete")
+				}
+			})
+		})
+	})
+</script>
+{% endblock %}

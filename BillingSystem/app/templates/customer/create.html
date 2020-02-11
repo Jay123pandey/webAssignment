@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form action="/customer_create" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+Customer_name:{{form.Customer_name}}
+    Customer_address:{{form.Customer_address}}
+<button type="submit">add</button>
+</form>
+{% endblock %}

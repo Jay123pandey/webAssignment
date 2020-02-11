@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form method="POST" action="/customer_update/{{customer.Customer_id}}" enctype="multipart/form-data">
+			{% csrf_token %}
+			 Customer_name: <input type="text" name="Customer_name" value="{{customer.Customer_name}}"/>
+              Customer_address: <input type="text" name="Customer_address" value="{{customer.Customer_address}}"/>
+
+			<button type="submit">Submit</button>
+</form>
+{% endblock %}
